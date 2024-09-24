@@ -98,4 +98,33 @@ You can increase git buffer size to 150 mb for example by this command:
 
 ## Activity 2.4: Building and running the docker image locally 
 
+Do not build and run in virtual environment like Flask in previous activity, go to root repo
+directory of local computer.
 
+## Activity 2.4: Step 3 Build & Run
+ 
+ <docker build -t python-docker .>
+ 
+![](Screenshots/A2_4step3a.png)
+
+<docker run -d -p 50000:5000 python-docker>
+
+![](Screenshots/A2_4step3b.png)
+
+To show the containers currently running, used <docker ps –a>, then saw the log information indicating the running application. 
+
+<docker ps –a>
+
+![](Screenshots/A2_4step3c.png)
+
+## Activity 2.4: Step 4 Application Run Website & Docker Application on Local Computer
+
+Application running (Go to Docker Desktop application on local computer & click port):
+
+http://localhost:50000/
+
+![](Screenshots/A2_4step4a.png)
+
+![](Screenshots/A2_4step4b.png)
+
+![](Screenshots/A2_4step4c.png)
