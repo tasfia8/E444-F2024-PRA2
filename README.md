@@ -93,6 +93,19 @@ You can increase git buffer size to 150 mb for example by this command:
 ![](Screenshots/A2_2.png)
 
 ## Activity 2.3: Modify Activity 1.4: 
+
+Run these Commands to run the application:
+
+python3 -m venv .venv
+
+. .venv/bin/activate
+
+pip install Flask
+
+pip install Flask-WTF WTForms
+
+pip install email-validator
+
 ![](Screenshots/A2_3.png)
 
 
