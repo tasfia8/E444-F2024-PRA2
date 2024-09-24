@@ -78,3 +78,24 @@ Extra:
 Aside note: Helpful Git Command: For large file issues, pushing from vs to git won't always work. 
 You can increase git buffer size to 150 mb for example by this command:
 (.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % git config --global http.postBuffer 157286400
+
+### Activity 2: Docker
+
+## Activity 2.1: Create the PRA2_2 branch and pull the code 
+
+![](Screenshots/A2_1step2a.png)
+
+![](Screenshots/A2_1step2b.png)
+
+![](Screenshots/A2_1step3.png)
+
+## Activity 2.2: Docker Install
+![](Screenshots/A2_2.png)
+
+## Activity 2.3: Modify Activity 1.4: 
+![](Screenshots/A2_3.png)
+
+
+## Activity 2.4: Building and running the docker image locally 
+
+
