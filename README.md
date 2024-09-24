@@ -74,3 +74,7 @@ Fill in your first name and last name in the 1st field, and fill in your NON Uof
 
 Extra:
 ![](Screenshots/A1_4step5b.png)
+
+Aside note: Helpful Git Command: For large file issues, pushing from vs to git won't always work. 
+You can increase git buffer size to 150 mb for example by this command:
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % git config --global http.postBuffer 157286400
