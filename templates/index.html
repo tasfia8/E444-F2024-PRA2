@@ -1,0 +1,13 @@
+<!-- Example 3-1. templates/index.html: Jinja2 template -->
+<!-- <h1>Hello World!</h1> -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="page-header"></div>
+    <h1>Hello Tasfia!</h1>
+<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+</div>
+{% endblock %}

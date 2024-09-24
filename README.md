@@ -16,3 +16,9 @@ This repo is a clone of https://github.com/miguelgrinberg/flasky
 
 ![](Screenshots/Pra2Activity1_2exp2b.png)
 
+### Activity 1.3: Replaying and modifying example in Chapter 3 
+
+![](Screenshots/A1p3.png)
+
+![](Screenshots/A1p3b.png)
+
