@@ -39,6 +39,21 @@
 </div>
 {% endblock %}
 
+<!-- Activiy 1.4 Own C1 Example 4-7. below templates/base.html: rendering of flashed messages -->
+{% block content %}
+<div class="container">
+ {% for message in get_flashed_messages() %}
+ <div class="alert alert-warning">
+ <button type="button" class="close" data-dismiss="alert">&times;</button>
+ {{ message }}
+ </div>
+ {% endfor %}
+ {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+<!-- Activiy 1.4 Own C1 Example 4-7. above templates/base.html: rendering of flashed messages -->
+
 {% block scripts %}
 {{ super() }}
 {{ moment.include_moment() }}
