@@ -111,22 +111,27 @@ pip install email-validator
 
 ## Activity 2.4: Building and running the docker image locally 
 
-Do not build and run in virtual environment like Flask in previous activity, go to root repo
-directory of local computer.
+Make sure to run in virtual environment like Flask in previous activity, go to root repo directory of local computer.
 
 ## Activity 2.4: Step 3 Build & Run
+ *First activate virtual env:*
  
- <docker build -t python-docker .>
+ python3 -m venv .venv   
+. .venv/bin/activate 
+
+*Build:*
+
+docker build -t tasfia:final .
  
 ![](Screenshots/A2_4step3a.png)
 
-<docker run -d -p 50000:5000 python-docker>
+*Run:*
+
+docker run -p 5000:5000 tasfia:final
 
 ![](Screenshots/A2_4step3b.png)
 
-To show the containers currently running, used <docker ps –a>, then saw the log information indicating the running application. 
-
-<docker ps –a>
+Full Snippet of venv, build, run:
 
 ![](Screenshots/A2_4step3c.png)
 
@@ -134,10 +139,20 @@ To show the containers currently running, used <docker ps –a>, then saw the lo
 
 Application running (Go to Docker Desktop application on local computer & click port):
 
-http://localhost:50000/
+*If port 5000:*
+
+http://localhost:5000/
+
+*If port 5001:*
+
+http://localhost:5001/
 
 ![](Screenshots/A2_4step4a.png)
 
 ![](Screenshots/A2_4step4b.png)
+
+CAREFUL: do this command only after you CTRL+C and exit but it's okay if you still stay in venv. To show the containers currently running, used <docker ps –a>, then saw the log information indicating the running application. 
+
+docker ps -a
 
 ![](Screenshots/A2_4step4c.png)

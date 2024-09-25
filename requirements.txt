@@ -1,12 +1,33 @@
-flask
-flask_bootstrap
+flask==3.0.3
+
+flask_wtf==1.2.1
+
+flask_bootstrap==3.3.7.1
+
 #for date and time
-flask_moment
+flask_moment==1.0.6
+
 #for import problems
-flask_wtf
+email_validator==2.2.0
 itsdangerous
 jinja2
 werkzeug
 wtforms
+
+
+
+######################################################### Old  ##########################################
+
+
+#flask
+#flask_bootstrap
+#for date and time
+#flask_moment
+#for import problems
+#flask_wtf
+#itsdangerous
+#jinja2
+#werkzeug
+#wtforms
 
 #Above will be utilised to make env
