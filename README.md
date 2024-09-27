@@ -127,7 +127,7 @@ docker build -t tasfia:final .
 
 *Run:*
 
-docker run -p 5000:5000 tasfia:final
+docker run -p 5001:5000 tasfia:final
 
 ![](Screenshots/A2_4step3b.png)
 

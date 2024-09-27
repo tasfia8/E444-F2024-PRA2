@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 #A1_4-C1
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, EmailField
 from wtforms.validators import Email, DataRequired
 
 app = Flask(__name__)
@@ -19,7 +19,8 @@ moment = Moment(app)
 class NameForm(FlaskForm):
  name = StringField('What is your name?', validators=[DataRequired()])
  #A1_4p2 C1
- email=StringField('What is your UofT Email address?', validators=[DataRequired(),Email()])
+ #email= EmailField('What is your UofT Email address?', validators=[DataRequired(),Email()])
+ email= EmailField('What is your UofT Email address?', validators=[DataRequired()])
  
  submit = SubmitField('Submit')
 
@@ -36,8 +37,29 @@ def index():
         if old_name is not None and old_name != form.name.data:
             flash('Looks like you have changed your name!')
 
-    #Email verify
+        #Email verify 
+        email_input = form.email.data or ''
+        valid_email = 'utoronto' in email_input and '@' in email_input.split("utoronto")[0]
         
+        if email_prev != email_input:
+            flash('Looks like you have changed your email!')
+       
+      
+        session['name'] = form.name.data
+        
+        
+        session['email'] = email_input        
+        return redirect(url_for('index'))
+
+    session_email = session.get('email', '')  
+    valid_email = 'utoronto' in session_email and '@' in session_email.split("utoronto")[0] if session_email else False  
+    
+
+    return render_template('index.html', form=form, name=session.get('name'), email=session_email, valid_email=valid_email)
+
+
+    
+''' Old Code Tuesday below
         if 'utoronto' not in form.email.data:
             flash('Looks like you have changed your email!')
 
@@ -59,6 +81,8 @@ def index():
     
     return render_template('index.html', form = form, 
                            name = session.get('name'), email = session.get('email'))
+
+Old code Tuesday above ''' 
 
 
 @app.route('/user/<name>')

@@ -1,20 +1,19 @@
-<!-- Example 4-3.  -->
+ {% extends "base.html" %}
+ {% import "bootstrap/wtf.html" as wtf %}
 
-
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% block title %}Flasky{% endblock %}
+ 
 {% block page_content %}
 <div class="page-header">
  <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}! Welcome to PRA2 Docker!</h1>
 
- <!-- A4_1_p2 -->
-
- <h1>{% if email %} <p>Your UofT Email is {{ email }}</p>
-    
-    {% else %}<p>Please use your U of T Email address.</p>{% endif %}</h1>
-
-  <!-- A4_1_p2 -->
+ 
+ {% if email %}
+ {% if valid_email %}
+     <h1>Your UofT Email is {{ email }}</h1>
+ {% else %}
+     <h1>Please use your UofT Email address.</h1> 
+ {% endif %}
+{% endif %}
 
 
 </div>
