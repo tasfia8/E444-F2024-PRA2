@@ -156,3 +156,72 @@ CAREFUL: do this command only after you CTRL+C and exit but it's okay if you sti
 docker ps -a
 
 ![](Screenshots/A2_4step4c.png)
+
+
+### To Test FLASK and Docker Simultaneously:
+**First run Docker Terminal in VS Code:**
+First check which branch you are in
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **git branch**
+ (HEAD detached at 0881438)
+  PRA2_2
+  Main
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **git checkout PRA2_2**
+If you get error untracked files error: The following untracked working tree files would be overwritten by checkout:
+
+Then do stash line below:
+
+(Optional)(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % git stash --include-untracked
+
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **docker build -t tasfia:final .**
+
+If you get error ERROR: failed to solve: python:3.10: then do
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **docker login**
+Authenticating with existing credentials...
+Login Succeeded
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **docker build -t tasfia:final .**
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % **docker run -p 5001:5000 tasfia:final**
+
+**Then run Flask Activity 1.3 Time Exercise in another Terminal of VS Code:**
+
+Open new terminal. First if you r in venv already, deactivate and activate again: 
+
+python3 -m venv .venv
+. .venv/bin/activate
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % git checkout 
+0881438 
+Note: switching to '0881438'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 0881438 Activity 1.3 Completed1 Chapter3
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % pip install Flask
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % export FLASK_APP=hello.py
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % pip install flask-moment
+
+(.venv) tasfiaislam@Tasfias-MBP ECE444-F2024-PRA2 % flask run  
